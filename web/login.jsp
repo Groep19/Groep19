@@ -13,7 +13,8 @@
 <meta name="description" content="your description here" />
 
 <script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
-   
+ 
+        
 
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
@@ -114,17 +115,17 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <form action="verwerk.jsp" class="col col_6">
+            <form action="verwerk.jsp" class="col col_6" id="loginForm">
                 <fieldset class="s_column">
                     
                 <legend>Login</legend>
                 <div>
                 <label for="name">Gebruikersnaam:</label>
-                <input type="text" name="geb_naam" required="required" class="box_shadow">
+                <input type="text" name="geb_naam"  class="box_shadow" required ="required">
                 </div>
                <div>
                     <label for="pwd">Wachtwoord:</label>
-                <input type="password" name="pwd" required="required" class="box_shadow">
+                <input type="password" name="pwd"  class="box_shadow" required ="required">
               </div>
                 <button type="submit" value="Inloggen">Inloggen</button>
                 

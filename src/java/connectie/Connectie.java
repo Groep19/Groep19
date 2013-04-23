@@ -25,7 +25,7 @@ public class Connectie
    private static final String USERNAME = "root";
    private static final String PASSWORD = "";
 
-   private Connection connection = null; // manages connection
+   private Connection connection = null;
    private PreparedStatement ophalenGebruikers = null; 
    private PreparedStatement ophalenBands = null;
    private PreparedStatement ophalenAlleBands = null;

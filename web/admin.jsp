@@ -129,16 +129,17 @@ image3.src="Afbeeldingen/festival3.jpg"
             if (request.getParameter("wijzigen")!=null){
                
                 Connectie wijzigen = new Connectie();
-                int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),Integer.parseInt(request.getParameter("hidden")));
-                out.println(result);
+                int id = Integer.parseInt(request.getParameter("hidden")) + 1;
+                int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),id);
+               wijzigen.close();
             }
             //Indien er op de knop "verwijderen" geklikt wordt ==> onderstaande code uitvoeren
              if (request.getParameter("verwijderen")!=null){
-                int result = 0;
+                int id = Integer.parseInt(request.getParameter("hidden")) + 1;
                  //object van de klasse "Connectie" aanmaken
                 Connectie verwijderen = new Connectie();
                 //uitvoeren methode "VerwijderBand" van de klasse "Connectie"
-                result = verwijderen.VerwijderBand(Integer.parseInt(request.getParameter("hidden")));
+                int result = verwijderen.VerwijderBand(id);
                  //Sluiten van de connectie
                 verwijderen.close();
             }
