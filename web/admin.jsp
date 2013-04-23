@@ -6,6 +6,7 @@
 --%>
 
 
+<%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +122,11 @@ image3.src="Afbeeldingen/festival3.jpg"
               Connectie b = new Connectie();
               //uitvoeren methode "ToevoegenBand" van de klasse "Connectie"
               int result = b.ToevoegenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"));
-              out.println(result);
+              if (result == 1){
+                  out.println("<p>Toevoegen geslaagd.</p>");
+              }else{
+                  out.println("<p>Er is een fout opgetreden.</p>");
+              }
               //Sluiten van de connectie
               b.close();
             }
@@ -131,7 +136,12 @@ image3.src="Afbeeldingen/festival3.jpg"
                 Connectie wijzigen = new Connectie();
                 int id = Integer.parseInt(request.getParameter("hidden")) + 1;
                 int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),id);
-               wijzigen.close();
+                if (result == 1){
+                  out.println("<p>Wijzigen geslaagd.</p>");
+              }else{
+                  out.println("<p>Er is een fout opgetreden.</p>");
+              }
+                wijzigen.close();
             }
             //Indien er op de knop "verwijderen" geklikt wordt ==> onderstaande code uitvoeren
              if (request.getParameter("verwijderen")!=null){
@@ -140,6 +150,11 @@ image3.src="Afbeeldingen/festival3.jpg"
                 Connectie verwijderen = new Connectie();
                 //uitvoeren methode "VerwijderBand" van de klasse "Connectie"
                 int result = verwijderen.VerwijderBand(id);
+                 if (result == 1){
+                  out.println("<p>Verwijderen geslaagd.</p>");
+              }else{
+                  out.println("<p>Er is een fout opgetreden.</p>");
+              }
                  //Sluiten van de connectie
                 verwijderen.close();
             }
