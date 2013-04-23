@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="groep19_festivals"/>
+  <table-filter match-name="campings"/>
+  <table-filter match-name="bands"/>
+  <table-filter match-name="podia"/>
+  <table-filter match-name="faciliteiten"/>
+  <table-filter match-name="festivals"/>
+  <table-filter match-name="tickets"/>
+</hibernate-reverse-engineering>

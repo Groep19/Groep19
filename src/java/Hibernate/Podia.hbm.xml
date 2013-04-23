@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2013 6:36:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Hibernate.Podia" table="podia" catalog="groep19_festivals">
+        <id name="podId" type="java.lang.Integer">
+            <column name="pod_id" />
+            <generator class="identity" />
+        </id>
+        <property name="podOmschr" type="string">
+            <column name="pod_omschr" length="128" not-null="true" />
+        </property>
+        <property name="podLocatie" type="string">
+            <column name="pod_locatie" length="128" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
