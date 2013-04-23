@@ -121,6 +121,18 @@ image3.src="Afbeeldingen/festival3.jpg"
               out.println(result);
               b.close();
             }
+            if (request.getParameter("wijzigen")!=null){
+               
+                Connectie wijzigen = new Connectie();
+                int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),Integer.parseInt(request.getParameter("hidden")));
+                out.println(result);
+            }
+             if (request.getParameter("verwijderen")!=null){
+                int result = 0;
+                Connectie verwijderen = new Connectie();
+                result = verwijderen.VerwijderBand(Integer.parseInt(request.getParameter("hidden")));
+                verwijderen.close();
+            }
          int current = 0;
          int max= 0;
             if(request.getParameter("hidden") != null) {

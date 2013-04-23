@@ -32,6 +32,8 @@ public class Connectie
    private PreparedStatement ophalenAlleFestivals = null; 
    private PreparedStatement ophalenInfoFestivals = null;
    private PreparedStatement toevoegenBand = null;
+   private PreparedStatement wijzigenBand = null;
+    private PreparedStatement verwijderBand = null;
    
    
    // constructor
@@ -64,6 +66,11 @@ public class Connectie
 "festivals.fest_naam = ? " + 
                  "ORDER BY `datum` ASC, 'uur' ASC");
          toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?");
+         wijzigenBand = connection.prepareStatement("UPDATE bands SET " +
+            "band_naam = ?, band_soortMuziek = ?, band_url = ?" +
+        	"WHERE band_id = ?");
+          verwijderBand = connection.prepareStatement("DELETE FROM bands WHERE band_id = ? ");
+         
          
       } // end try
       catch ( SQLException sqlException )
@@ -331,4 +338,49 @@ public class Connectie
       
       return result;
    }
+   public int WijzigenBand(  
+		   String band_naam, String band_genre, String band_url, int band_id)
+		   {
+		      int result = 0;
+		      
+		      // set parameters, then execute insertNewPerson
+		      try 
+		      {
+		        wijzigenBand.setString( 1, band_naam );
+		         wijzigenBand.setString( 2, band_genre );
+		         wijzigenBand.setString( 3, band_url );
+		         wijzigenBand.setInt(4, band_id);
+		         
+
+		         // insert the new entry; returns # of rows updated
+		         result = wijzigenBand.executeUpdate(); 
+		      } // end try
+		      catch ( SQLException sqlException )
+		      {
+		         sqlException.printStackTrace();
+		         close();
+		      } // end catch
+		      
+		      return result;
+		   }
+   public int VerwijderBand( int band_id )
+   {
+      int result = 0;
+      
+      // set parameters, then execute insertNewPerson
+      try 
+      {
+         verwijderBand.setInt( 1, band_id);
+
+         // update the entry; returns # of rows updated
+         result = verwijderBand.executeUpdate();
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();
+         close();
+      } // end catch
+      
+      return result;
+   } // end method deletePerson 
 } 
