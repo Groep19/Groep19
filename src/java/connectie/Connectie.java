@@ -67,7 +67,7 @@ public class Connectie
 "b.pod_id = podia.pod_id AND " +
 "festivals.fest_naam = ? " + 
                  "ORDER BY `datum` ASC, 'uur' ASC");
-         toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?");
+         toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?)");
          wijzigenBand = connection.prepareStatement("UPDATE bands SET " +
             "band_naam = ?, band_soortMuziek = ?, band_url = ?" +
         	"WHERE band_id = ?");

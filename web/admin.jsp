@@ -121,7 +121,7 @@ image3.src="Afbeeldingen/festival3.jpg"
               Connectie b = new Connectie();
               //uitvoeren methode "ToevoegenBand" van de klasse "Connectie"
               int result = b.ToevoegenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"));
-              out.println(result);
+              
               //Sluiten van de connectie
               b.close();
             }
