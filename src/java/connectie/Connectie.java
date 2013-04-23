@@ -81,7 +81,7 @@ public class Connectie
    } // end PersonQueries constructor
    
    // select all of the addresses in the database   
-   public int ophalenGebruikers(String geb_naam, String geb_paswoord)
+   public int OphalenGebruikers(String geb_naam, String geb_paswoord)
    {
       
       ResultSet resultSet = null;
@@ -119,7 +119,7 @@ public class Connectie
     return count;
    } 
    
-   public List < Bands > ophalenBands(String band_naam) throws Exception{
+   public List < Bands > OphalenBands(String band_naam) throws Exception{
        
        List< Bands > results = null;
        ResultSet resultSet = null;
@@ -164,7 +164,7 @@ public class Connectie
     return results;
    }
    
-   public List < Festivals > ophalenAlleFestivals() throws Exception{
+   public List < Festivals > OphalenAlleFestivals() throws Exception{
         List < Festivals > results = null;
        ResultSet resultSet = null;
                
@@ -212,7 +212,7 @@ public class Connectie
        
        
    } 
-   public List < Bands > ophalenAlleBands() throws Exception{
+   public List < Bands > OphalenAlleBands() throws Exception{
        
        List< Bands > results = null;
        ResultSet resultSet = null;
@@ -269,7 +269,7 @@ public class Connectie
       } // end catch
    } // end method close
    
-   public List < Festivals > ophalenInfoFestivals(String fest_naam) throws Exception{
+   public List < Festivals > OphalenInfoFestivals(String fest_naam) throws Exception{
         List< Festivals > results = null;
        ResultSet resultSet = null;
         

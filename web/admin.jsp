@@ -146,14 +146,14 @@ image3.src="Afbeeldingen/festival3.jpg"
        List < Bands > bands;
     
        Connectie connectie = new Connectie();
-        bands = connectie.ophalenAlleBands();
+        bands = connectie.OphalenAlleBands();
          max = bands.size();
          if (current == bands.size()){
              current = 0;
          }
        try{
         
-       bands = connectie.ophalenAlleBands();
+       bands = connectie.OphalenAlleBands();
              
              }
        catch(Exception e){

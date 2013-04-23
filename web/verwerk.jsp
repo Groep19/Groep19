@@ -78,7 +78,7 @@ footer { font-size:.8em; }
            String geb_paswoord = request.getParameter("pwd");
            int resultaat;
           Connectie f = new Connectie();
-          resultaat = f.ophalenGebruikers(geb_naam, geb_paswoord);
+          resultaat = f.OphalenGebruikers(geb_naam, geb_paswoord);
           f.close();
           if (resultaat == 1){
               response.sendRedirect("admin.jsp"); //redirect naar admin gedeelte. Tijdelijke verwijzing naar index pagina

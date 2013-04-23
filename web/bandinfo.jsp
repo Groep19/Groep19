@@ -121,7 +121,7 @@ image3.src="Afbeeldingen/festival3.jpg"
        List < Bands > resultaat;
        Connectie connectie = new Connectie();
        try{
-       resultaat = connectie.ophalenBands(request.getParameter("band_naam"));
+       resultaat = connectie.OphalenBands(request.getParameter("band_naam"));
        
        out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");

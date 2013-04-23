@@ -119,7 +119,7 @@ image3.src="Afbeeldingen/festival3.jpg"
        List < Festivals > resultaat;
        Connectie connectie = new Connectie();
        try{
-       resultaat = connectie.ophalenInfoFestivals(request.getParameter("fest_naam"));
+       resultaat = connectie.OphalenInfoFestivals(request.getParameter("fest_naam"));
        
         for (int i=0;i<resultaat.size();i++){
        

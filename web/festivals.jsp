@@ -129,7 +129,7 @@ image3.src="Afbeeldingen/festival3.jpg"
             Connectie connectie = new Connectie();
             
             try{
-                resultaat = connectie.ophalenAlleFestivals();
+                resultaat = connectie.OphalenAlleFestivals();
                 for (int i=0;i<resultaat.size();i++){
                 %><tr> <%
                 %><td><%out.println(resultaat.get(i).getFest_id());%></td><%
