@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Prijzen</title>
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
@@ -93,8 +94,19 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            
+           <h:dataTable value="#{campingBean.Campings}" var="campings" rowClasses="oddRows,evenRows" headerClass="header" styleClass="table" cellpadding="5" cellspacing="0">
+                <h:column>
+                    <f:facet name="header">Festival</f:facet>
+                    #{campings.LOCATIE}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Type</f:facet>
+                    #{campings.CAP}
+                </h:column>
+              
+            
+            </h:dataTable>
         </article>  
     </div><!-- end content -->
     
