@@ -31,6 +31,7 @@ public class Connectie
    private PreparedStatement ophalenAlleBands = null;
    private PreparedStatement ophalenAlleFestivals = null; 
    private PreparedStatement ophalenInfoFestivals = null;
+   private PreparedStatement toevoegenBand = null;
    
    
    // constructor
@@ -62,6 +63,7 @@ public class Connectie
 "b.pod_id = podia.pod_id AND " +
 "festivals.fest_naam = ? " + 
                  "ORDER BY `datum` ASC, 'uur' ASC");
+         toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?,?");
          
       } // end try
       catch ( SQLException sqlException )
@@ -307,4 +309,26 @@ public class Connectie
        
        
    } 
-} // end class PersonQueries
+   public int ToevoegenBand(String band_naam, String band_genre, String band_url){
+       int result = 0;
+      
+      // set parameters, then execute insertNewPerson
+      try 
+      {
+            toevoegenBand.setString( 1, band_naam );
+         toevoegenBand.setString( 2, band_genre );
+           toevoegenBand.setString( 3, band_url );
+     
+
+         // insert the new entry; returns # of rows updated
+         result = toevoegenBand.executeUpdate(); 
+      } // end try
+      catch ( SQLException sqlException )
+      {
+         sqlException.printStackTrace();
+         close();
+      } // end catch
+      
+      return result;
+   }
+} 
