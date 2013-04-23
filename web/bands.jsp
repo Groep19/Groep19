@@ -110,11 +110,11 @@ image3.src="Afbeeldingen/festival3.jpg"
     <div class="content col_12 col">
         <article>
             <h1>Bands</h1>
-            <a href="./bandinfo.jsp?band_naam=${"Eminem"}"><img src="./Afbeeldingen/LogoEminem.gif" border="2" style="border:2px solid black;width:200px;height:200px" alt="Eminem"/></a>
-            <a href="./bandinfo.jsp?band_naam=${"Foo Fighters"}"><img src="./Afbeeldingen/LogoFoofighters.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Foo Fighters"/></a>
-            <a href="./bandinfo.jsp?band_naam=${"Dada Life"}"><img src="./Afbeeldingen/LogoDadaLife.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Dada life"/></a>
-            <a href="./bandinfo.jsp?band_naam=${"Metallica"}"><img src="./Afbeeldingen/LogoMetallica.gif" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Metallica"/></a>
-            <a href="./bandinfo.jsp?band_naam=${"Netsky"}"><img src="./Afbeeldingen/LogoNetsky.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Netsky"/></a>
+            <a href="./bandinfo.jsp?band_naam=Eminem"><img src="./Afbeeldingen/LogoEminem.gif" border="2" style="border:2px solid black;width:200px;height:200px" alt="Eminem"/></a>
+            <a href="./bandinfo.jsp?band_naam=Foo Fighters"><img src="./Afbeeldingen/LogoFoofighters.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Foo Fighters"/></a>
+            <a href="./bandinfo.jsp?band_naam=Dada Life"><img src="./Afbeeldingen/LogoDadaLife.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Dada life"/></a>
+            <a href="./bandinfo.jsp?band_naam=Metallica"><img src="./Afbeeldingen/LogoMetallica.gif" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Metallica"/></a>
+            <a href="./bandinfo.jsp?band_naam=Netsky"><img src="./Afbeeldingen/LogoNetsky.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Netsky"/></a>
           
             <p></p>
         </article>  
