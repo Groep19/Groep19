@@ -69,6 +69,7 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li class="active"><a href="./index.jsp">Home</a></li>

@@ -43,7 +43,7 @@ aside {min-height:400px;}
 
 footer { font-size:.8em; } 
 </style>
-
+<%-- script voor de afbeeldingen te laten veranderen. --%>
 <script language="JavaScript1.1">
 <!--
 var image1=new Image()
@@ -66,7 +66,7 @@ image3.src="Afbeeldingen/festival3.jpg"
       
         
         <div class="clear"></div>
-        
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
@@ -110,25 +110,33 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
+            <%-- Hier halen we de naam van de band op die we meegegeven hebben uit de pagina bands.jsp  --%>
             <h1><%=request.getParameter("band_naam")%></h1>
          
             
-         <%--   <%=request.getParameter("band_naam")%> --%>
+        
                           <%@page import="java.util.List"%>
                           <%@page import="connectie.Connectie"%>
                           <%@page import="connectie.Bands"%>
         <%
        List < Bands > resultaat;
+       
+       //object van de klasse "Connectie" aanmaken
        Connectie connectie = new Connectie();
+       
+       //uitvoeren methode "OphalenBands" van de klasse "Connectie"
+       
        try{
        resultaat = connectie.OphalenBands(request.getParameter("band_naam"));
-       
+       // we tonen alle resultaten.
        out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");
      out.print("Website: ");
        %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
        <%
        
+       //Sluiten van de connectie
+       connectie.close();
              }
        catch(Exception e){
        StackTraceElement [] a = e.getStackTrace();

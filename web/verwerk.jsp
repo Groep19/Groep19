@@ -56,6 +56,7 @@ footer { font-size:.8em; }
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li class="active"><a href="/">Home</a></li>

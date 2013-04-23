@@ -66,6 +66,7 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
@@ -109,6 +110,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
+            <%-- We hebben van elke band een aparte afbeelding waarmee we een link leggen naar de pagina: bandinfo.jsp --%>
+            <%-- We geven als parameter de naam van de band mee zodat we op de volgende pagina alle info hierover kunnen ophalen --%>
             <h1>Bands</h1>
             <a href="./bandinfo.jsp?band_naam=Eminem"><img src="./Afbeeldingen/LogoEminem.gif" border="2" style="border:2px solid black;width:200px;height:200px" alt="Eminem"/></a>
             <a href="./bandinfo.jsp?band_naam=Foo Fighters"><img src="./Afbeeldingen/LogoFoofighters.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Foo Fighters"/></a>

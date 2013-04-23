@@ -68,6 +68,7 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
@@ -126,7 +127,10 @@ image3.src="Afbeeldingen/festival3.jpg"
             <%
             List < Festivals > resultaat;
             
+            //object van de klasse "Connectie" aanmaken
             Connectie connectie = new Connectie();
+            
+      //uitvoeren methode "OphalenAlleFestivals" van de klasse "Connectie"
             
             try{
                 resultaat = connectie.OphalenAlleFestivals();
@@ -138,9 +142,11 @@ image3.src="Afbeeldingen/festival3.jpg"
                 %><td><%out.println(resultaat.get(i).getFest_datum());%></td><%
                 %><td><%out.println(resultaat.get(i).getFest_duur());%></td><%
                 %></tr><%
+                
                                }
                
-                
+                //Sluiten van de connectie
+                connectie.close();
             } catch (Exception e){
        StackTraceElement [] a = e.getStackTrace();
        for(int i =0;i<a.length; i++){
