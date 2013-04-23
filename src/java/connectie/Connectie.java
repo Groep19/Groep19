@@ -63,7 +63,7 @@ public class Connectie
 "b.pod_id = podia.pod_id AND " +
 "festivals.fest_naam = ? " + 
                  "ORDER BY `datum` ASC, 'uur' ASC");
-         toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?,?");
+         toevoegenBand = connection.prepareStatement("Insert into bands (band_naam,band_soortMuziek,band_url) VALUES (?,?,?");
          
       } // end try
       catch ( SQLException sqlException )
@@ -321,7 +321,7 @@ public class Connectie
      
 
          // insert the new entry; returns # of rows updated
-         result = toevoegenBand.executeUpdate(); 
+         result = toevoegenBand.executeUpdate();
       } // end try
       catch ( SQLException sqlException )
       {

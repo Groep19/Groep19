@@ -116,9 +116,10 @@ image3.src="Afbeeldingen/festival3.jpg"
                           <%@page import="connectie.Bands"%>
         <%
             if (request.getParameter("toevoegen")!=null){
-                Connectie b = new Connectie();
+              Connectie b = new Connectie();
               int result = b.ToevoegenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"));
               out.println(result);
+              b.close();
             }
          int current = 0;
          int max= 0;
