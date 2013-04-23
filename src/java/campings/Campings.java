@@ -1,5 +1,5 @@
-package Hibernate;
-// Generated Apr 22, 2013 6:36:57 PM by Hibernate Tools 3.2.1.GA
+package campings;
+// Generated Apr 23, 2013 11:10:33 PM by Hibernate Tools 3.2.1.GA
 
 
 

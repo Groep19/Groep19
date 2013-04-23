@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 22, 2013 6:36:58 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Apr 23, 2013 11:10:34 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="Hibernate.Campings" table="campings" catalog="groep19_festivals">
+    <class name="campings.Campings" table="campings" catalog="groep19_festivals">
         <id name="campId" type="java.lang.Integer">
             <column name="camp_id" />
             <generator class="identity" />

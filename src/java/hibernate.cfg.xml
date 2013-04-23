@@ -7,15 +7,8 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/groep19_festivals?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.show_sql">true</property>
-    <mapping resource="Hibernate/Bands.hbm.xml"/>
-    <mapping/>
-    <mapping/>
-    <mapping resource="Hibernate/Facpercamp.hbm.xml"/>
-    <mapping resource="Hibernate/Festivals.hbm.xml"/>
-    <mapping resource="Hibernate/Campings.hbm.xml"/>
-    <mapping resource="Hibernate/Faciliteiten.hbm.xml"/>
-    <mapping resource="Hibernate/Podia.hbm.xml"/>
-    <mapping/>
-    <mapping resource="Hibernate/Tickets.hbm.xml"/>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="campings/Campings.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
