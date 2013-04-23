@@ -110,8 +110,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1>Welkom</h1>
+            <p>Welkom op de webapplicatie van groep 19.</p>
         </article>  
     </div><!-- end content -->
     
