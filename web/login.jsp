@@ -4,6 +4,7 @@
     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
+<%@page import="connectie.Connectie"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +116,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <form action="verwerk.jsp" class="col col_6" id="loginForm">
+            
+            <form action="verwerk.jsp" class="col col_6">
                 <fieldset class="s_column">
                     
                 <legend>Login</legend>
