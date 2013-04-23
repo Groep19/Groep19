@@ -4,7 +4,7 @@
  */
 package connectie;
 
-/**
+/** klasse Connectie
  *
  * @author Sven
  */
@@ -36,7 +36,9 @@ public class Connectie
     private PreparedStatement verwijderBand = null;
    
    
-   // constructor
+  /**
+   * default constructor Connectie
+   */
    public Connectie()
    {
       try 
@@ -80,7 +82,12 @@ public class Connectie
       } // end catch
    } // end PersonQueries constructor
    
-   // select all of the addresses in the database   
+  /**
+   * methode OphalenGebruikers()
+   * @param geb_naam
+   * @param geb_paswoord
+   * @return aantal records in de ResultSet
+   */   
    public int OphalenGebruikers(String geb_naam, String geb_paswoord)
    {
       
@@ -118,7 +125,12 @@ public class Connectie
       
     return count;
    } 
-   
+   /**
+    * methode OphalenBands()
+    * @param band_naam
+    * @return een lijst met alle waarden die in de ResultSet zitten
+    * @throws Exception Indien er een probleem is met het uitvoeren van de query
+    */
    public List < Bands > OphalenBands(String band_naam) throws Exception{
        
        List< Bands > results = null;
@@ -163,7 +175,11 @@ public class Connectie
       
     return results;
    }
-   
+   /**
+    * methode OphalenAlleFestivals()
+    * @return een lijst met alle waarden aanwezig in de ResultSet
+    * @throws Exception Indien er een probleem is met het uitvoeren van de query 
+    */
    public List < Festivals > OphalenAlleFestivals() throws Exception{
         List < Festivals > results = null;
        ResultSet resultSet = null;
@@ -212,6 +228,11 @@ public class Connectie
        
        
    } 
+   /**
+    * methode OphalenBands()
+    * @return een lijst met alle waarden die in de ResultSet zitten
+    * @throws Exception Indien er een probleem is met het uitvoeren van de query
+    */
    public List < Bands > OphalenAlleBands() throws Exception{
        
        List< Bands > results = null;
@@ -268,7 +289,12 @@ public class Connectie
          sqlException.printStackTrace();
       } // end catch
    } // end method close
-   
+   /**
+    * methode OphalenInfoFestivals()
+    * @param fest_naam
+    * @return een lijst met alle waarden van de ResultSet
+    * @throws Exception Indien er een probleem is met het uitvoeren van de query
+    */
    public List < Festivals > OphalenInfoFestivals(String fest_naam) throws Exception{
         List< Festivals > results = null;
        ResultSet resultSet = null;
@@ -316,6 +342,13 @@ public class Connectie
        
        
    } 
+   /**
+    * methode ToevoegenBand()
+    * @param band_naam
+    * @param band_genre
+    * @param band_url
+    * @return een int-waarde die aangeeft of er al dan niet een records toegevoegd is. (1 = Ja, 0 = Neen)
+    */
    public int ToevoegenBand(String band_naam, String band_genre, String band_url){
        int result = 0;
       
@@ -338,6 +371,14 @@ public class Connectie
       
       return result;
    }
+   /**
+    * methode WijzigenBand()
+    * @param band_naam
+    * @param band_genre
+    * @param band_url
+    * @param band_id
+    * @return een int-waarde die aangeeft of er al dan niet een records is gewijzigd. (1 = Ja, 0 = Neen)
+    */
    public int WijzigenBand(  
 		   String band_naam, String band_genre, String band_url, int band_id)
 		   {
@@ -363,6 +404,11 @@ public class Connectie
 		      
 		      return result;
 		   }
+   /**
+    * methode VerwijderBand()
+    * @param band_id
+    * @return een int-waarde die aangeeft of er al dan niet een record is verwijderd. (1 = Ja, 0 = Neen)
+    */
    public int VerwijderBand( int band_id )
    {
       int result = 0;

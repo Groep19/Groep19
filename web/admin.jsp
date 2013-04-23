@@ -86,10 +86,10 @@ image3.src="Afbeeldingen/festival3.jpg"
             <img src="Afbeeldingen/festival1.jpg" name="slide" width=210 height=400>
                     <script>
                     <!--
-                    //variable that will increment through the images
+                    //variabele die per image stijgt met 1
                     var step=1
                     function slideit(){
-                    //if browser does not support the image object, exit.
+                    //Als de browser de afbeelding niet ondersteund =>
                     if (!document.images)
                     return
                     document.images.slide.src=eval("image"+step+".src")
@@ -97,7 +97,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                     step++
                     else
                     step=1
-                    //call function "slideit()" every 2.5 seconds
+                    //roept de functie slideit elke 2,5 seconde op
                     setTimeout("slideit()",5000)
                     }
                     slideit()
@@ -115,26 +115,36 @@ image3.src="Afbeeldingen/festival3.jpg"
                           <%@page import="connectie.Connectie"%>
                           <%@page import="connectie.Bands"%>
         <%
+            //indien er op de knop "toevoegen" geklikt wordt ==> onderstaande code uitvoeren
             if (request.getParameter("toevoegen")!=null){
+                //object van de klasse "Connectie" aanmaken
               Connectie b = new Connectie();
+              //uitvoeren methode "ToevoegenBand" van de klasse "Connectie"
               int result = b.ToevoegenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"));
               out.println(result);
+              //Sluiten van de connectie
               b.close();
             }
+            //Indien er op de knop "wijzigen" geklikt wordt ==> onderstaande code uitvoeren
             if (request.getParameter("wijzigen")!=null){
                
                 Connectie wijzigen = new Connectie();
                 int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),Integer.parseInt(request.getParameter("hidden")));
                 out.println(result);
             }
+            //Indien er op de knop "verwijderen" geklikt wordt ==> onderstaande code uitvoeren
              if (request.getParameter("verwijderen")!=null){
                 int result = 0;
+                 //object van de klasse "Connectie" aanmaken
                 Connectie verwijderen = new Connectie();
+                //uitvoeren methode "VerwijderBand" van de klasse "Connectie"
                 result = verwijderen.VerwijderBand(Integer.parseInt(request.getParameter("hidden")));
+                 //Sluiten van de connectie
                 verwijderen.close();
             }
          int current = 0;
          int max= 0;
+         
             if(request.getParameter("hidden") != null) {
                 current = Integer.parseInt(request.getParameter("hidden"));
             }
@@ -142,10 +152,11 @@ image3.src="Afbeeldingen/festival3.jpg"
                 current = 0;
             }
             
-          Bands b = new Bands();
-       List < Bands > bands;
-    
+         Bands b = new Bands();
+       List < Bands> bands;
+    //object van de klasse "Connectie" aanmaken
        Connectie connectie = new Connectie();
+       //methode "OphalenAlleBands" uitvoeren ==> haalt alle records op uit de tabel bands van de database.
         bands = connectie.OphalenAlleBands();
          max = bands.size();
          if (current == bands.size()){
