@@ -96,7 +96,7 @@ footer { font-size:.8em; }
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh

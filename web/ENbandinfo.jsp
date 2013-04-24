@@ -131,7 +131,7 @@ image3.src="Afbeeldingen/festival3.jpg"
        try{
        resultaat = connectie.OphalenBands(request.getParameter("band_naam"));
        // we tonen alle resultaten.
-       out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
+       out.print("Music Genre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");
      out.print("Website: ");
        %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
@@ -163,7 +163,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh

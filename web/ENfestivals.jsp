@@ -125,7 +125,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                      <td width=200><b><u>Name</u></b></td>
                      <td width=200><b><u>Location</u></b></td>
                      <td width=100><b><u>Date</u></b></td>
-                     <td width=20><b><u>Duur</u></b></td>          
+                     <td width=20><b><u>Duration</u></b></td>          
                  </tr>
             <%
             List < Festivals > resultaat;
@@ -176,7 +176,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
