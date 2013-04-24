@@ -93,16 +93,16 @@ image3.src="Afbeeldingen/festival3.jpg"
     </aside>
     
     <div class="content col_12 col">
-        <article>
+        
         <h:form styleClass="jsfcrud_list_form">
                 <h:commandLink action="#{CampingController.previous}" value="Previous #{CampingController.pageSize}" rendered="#{CampingController.hasPreviousPage}"/> 
                 <h:commandLink action="#{CampingController.next}" value="Next #{CampingController.pageSize}" rendered="#{CampingController.hasNextPage}"/> 
-                <h:dataTable value="#{CampingController.campings}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                <h:dataTable value="#{campings/CampingController.campings}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Title"/>
                         </f:facet>
-                        <h:outputText value="#{item.CampCap}"/>
+                        <h:outputText value="#{item.CampAdres}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
@@ -114,7 +114,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 </h:dataTable>
                 <br/>
             </h:form>
-        </article>  
+        
     </div><!-- end content -->
     
     
