@@ -111,8 +111,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1>Oeps</h1>
+            <p>Under construction</p>
         </article>  
     </div><!-- end content -->
     
