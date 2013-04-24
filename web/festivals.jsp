@@ -77,6 +77,8 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./locatie.jsp">Locatie</a></li>
                 <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENfestivals.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./festivals.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>

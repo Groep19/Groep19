@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
+<title>FestivalSite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -43,7 +43,7 @@ aside {min-height:400px;}
 
 footer { font-size:.8em; } 
 </style>
-
+<%-- script voor de afbeeldingen te laten veranderen. --%>
 <script language="JavaScript1.1">
 <!--
 var image1=new Image()
@@ -66,18 +66,17 @@ image3.src="Afbeeldingen/festival3.jpg"
       
         
         <div class="clear"></div>
-        
         <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
-            	<li><a href="./index.jsp">Home</a></li>
-                <li class="active"><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li><a href="./prijzen.xhtml">Prijzen</a></li>
-                <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
-                <logonknop><li><a href="./ENfestivals.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
-                <logonknop><li><a href="./festivals.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
+            	<li><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li class="active"><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENbandinfo.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./bandinfo.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>
@@ -113,35 +112,34 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <%-- We halen de parameter op van de naam van het festival die we meegekregen hebben van de pagina: festivals.jsp  --%>
-            <h1><%=request.getParameter("fest_naam")%></h1>
-            <table>
+            <%-- Hier halen we de naam van de band op die we meegegeven hebben uit de pagina bands.jsp  --%>
+            <h1><%=request.getParameter("band_naam")%></h1>
+         
+            
+        
                           <%@page import="java.util.List"%>
                           <%@page import="connectie.Connectie"%>
-                          <%@page import="connectie.Festivals"%>
+                          <%@page import="connectie.Bands"%>
         <%
-       List < Festivals > resultaat;
+       List < Bands > resultaat;
        
        //object van de klasse "Connectie" aanmaken
        Connectie connectie = new Connectie();
        
-       //uitvoeren methode "OphalenInfoFestivals" van de klasse "Connectie"
+       //uitvoeren methode "OphalenBands" van de klasse "Connectie"
+       
        try{
-       resultaat = connectie.OphalenInfoFestivals(request.getParameter("fest_naam"));
+       resultaat = connectie.OphalenBands(request.getParameter("band_naam"));
+       // we tonen alle resultaten.
+       out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
+       out.print("</br>");
+     out.print("Website: ");
+       %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
+       <%
        
-        for (int i=0;i<resultaat.size();i++){
-       
-       
-       %><tr><td><b><u>Band:</u></b></td><td><%out.print(resultaat.get(i).getBand_naam());%></td></tr><%
-       %><tr><td><b><u>Datum:</u></b></td><td><%out.print(resultaat.get(i).getDatum());%></td></tr><%
-       %><tr><td><b><u>Uur:</u></b></td><td><%out.print(resultaat.get(i).getUur());%></td></tr><%
-       %><tr><td><b><u>Podium:</u></b></td><td><%out.print(resultaat.get(i).getPod_omschr());%></td></tr><%
-       %><tr><td></br></br></td></tr><%
-       
-        }
-        //Sluiten van de connectie
+       //Sluiten van de connectie
        connectie.close();
-            }
+             }
        catch(Exception e){
        StackTraceElement [] a = e.getStackTrace();
        for(int i =0;i<a.length; i++){
@@ -151,9 +149,9 @@ image3.src="Afbeeldingen/festival3.jpg"
        
        }
         
-         
-    %>
-       </table>
+        %>
+        
+    
         </article>  
     </div><!-- end content -->
     
@@ -168,7 +166,7 @@ image3.src="Afbeeldingen/festival3.jpg"
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>

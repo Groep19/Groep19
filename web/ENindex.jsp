@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
+<title>FestivalSite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -70,12 +70,12 @@ image3.src="Afbeeldingen/festival3.jpg"
         <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
-            	<li class="active"><a href="./index.jsp">Home</a></li>
-                <li><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li><a href="./prijzen.xhtml">Prijzen</a></li>
-                <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
+            	<li class="active"><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
                 <logonknop><li><a href="./ENindex.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./index.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
@@ -113,8 +113,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Welkom</h1>
-            <p>Welkom op de webapplicatie van groep 19.</p>
+            <h1>Welcome</h1>
+            <p>Welcome on the internetwebsite of group 19. </p>
         </article>  
     </div><!-- end content -->
     
@@ -126,7 +126,7 @@ image3.src="Afbeeldingen/festival3.jpg"
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>
