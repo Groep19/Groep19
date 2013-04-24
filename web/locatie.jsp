@@ -65,6 +65,7 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
@@ -73,6 +74,8 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li class="active"><a href="./locatie.jsp">Locatie</a></li>
                 <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENlocatie.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./locatie.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>

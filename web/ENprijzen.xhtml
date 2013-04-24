@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Prijzen</title>
+        <title>Prices</title>
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
@@ -55,12 +55,14 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <nav>
         	<ul>
-            	<li><a href="./index.jsp">Home</a></li>
-                <li><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li class="active"><a href="./prijzen.xhtml">Prijzen</a></li>
+            	<li><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li class="active"><a href="./ENprijzen.xhtml">Price</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENprijzen.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./prijzen.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>
@@ -94,7 +96,7 @@ image3.src="Afbeeldingen/festival3.jpg"
     </aside>
     
     <div class="content col_12 col">
-        
+        <article>
         <h:form styleClass="jsfcrud_list_form">
                 <h:commandLink action="#{CampingController.previous}" value="Previous #{CampingController.pageSize}" rendered="#{CampingController.hasPreviousPage}"/> 
                 <h:commandLink action="#{CampingController.next}" value="Next #{CampingController.pageSize}" rendered="#{CampingController.hasNextPage}"/> 
@@ -115,7 +117,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 </h:dataTable>
                 <br/>
             </h:form>
-        
+        </article>  
     </div><!-- end content -->
     
     
@@ -126,7 +128,7 @@ image3.src="Afbeeldingen/festival3.jpg"
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
     </h:body>

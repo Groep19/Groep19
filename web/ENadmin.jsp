@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
+<title>FestivalSite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -72,12 +72,12 @@ image3.src="Afbeeldingen/festival3.jpg"
         <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
-            	<li class="active"><a href="./index.jsp">Home</a></li>
-                <li><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li><a href="./prijzen.xhtml">Prijzen</a></li>
-                <logonknop><li><a href="./index.jsp">Uitloggen</a></li></logonknop>
+            	<li class="active"><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <logonknop><li><a href="./ENindex.jsp">Uitloggen</a></li></logonknop>
                 <logonknop><li><a href="./ENadmin.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./admin.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
@@ -126,9 +126,9 @@ image3.src="Afbeeldingen/festival3.jpg"
               //uitvoeren methode "ToevoegenBand" van de klasse "Connectie"
               int result = b.ToevoegenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"));
               if (result == 1){
-                  out.println("<p>Toevoegen geslaagd.</p>");
+                  out.println("<p>Insert succeeded.</p>");
               }else{
-                  out.println("<p>Er is een fout opgetreden.</p>");
+                  out.println("<p>There is a error.</p>");
               }
               //Sluiten van de connectie
               b.close();
@@ -140,9 +140,9 @@ image3.src="Afbeeldingen/festival3.jpg"
                 int id = Integer.parseInt(request.getParameter("hidden")) + 1;
                 int result = wijzigen.WijzigenBand(request.getParameter("naam"), request.getParameter("genre"), request.getParameter("website"),id);
                 if (result == 1){
-                  out.println("<p>Wijzigen geslaagd.</p>");
+                  out.println("<p>update succeeded.</p>");
               }else{
-                  out.println("<p>Er is een fout opgetreden.</p>");
+                  out.println("<p>There is a error.</p>");
               }
                 wijzigen.close();
             }
@@ -154,9 +154,9 @@ image3.src="Afbeeldingen/festival3.jpg"
                 //uitvoeren methode "VerwijderBand" van de klasse "Connectie"
                 int result = verwijderen.VerwijderBand(id);
                  if (result == 1){
-                  out.println("<p>Verwijderen geslaagd.</p>");
+                  out.println("<p>Delete succeeded</p>");
               }else{
-                  out.println("<p>Er is een fout opgetreden.</p>");
+                  out.println("<p>There is a error.</p>");
               }
                  //Sluiten van de connectie
                 verwijderen.close();
@@ -196,10 +196,10 @@ image3.src="Afbeeldingen/festival3.jpg"
        }
         
         %>
-            <h1>Beheer bands</h1>
+            <h1>Manage bands</h1>
             <form name="form1" action="admin.jsp">
                 
-                    Naam:
+                    Name
                     <input type="text" name="naam" value="<%=bands.get(current).getBand_naam()%>" /><br/>
                     Genre:
                     <input type="text" name="genre" value="<%=bands.get(current).getBand_soortMuziek()%>" /><br/>
@@ -209,9 +209,9 @@ image3.src="Afbeeldingen/festival3.jpg"
                   <INPUT TYPE="HIDDEN" NAME="hidden" VALUE="<%= current %>">
                    <input type="submit" value="<" name="vorige" ONCLICK="movePrevious()"  />
                   <input type="submit" value=">" name="volgende" ONCLICK="moveNext()"  /><br/>
-                 <input type="submit" value="toevoegen" name="toevoegen" />
-                <input type="submit" value="wijzigen" name="wijzigen" />
-                <input type="submit" value="verwijderen" name="verwijderen" />
+                 <input type="submit" value="Insert" name="toevoegen" />
+                <input type="submit" value="Update" name="wijzigen" />
+                <input type="submit" value="Delete" name="verwijderen" />
             </form>
             
             
@@ -243,7 +243,7 @@ image3.src="Afbeeldingen/festival3.jpg"
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>

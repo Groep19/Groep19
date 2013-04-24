@@ -4,18 +4,18 @@
     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
-
-
+<%@page import="connectie.Connectie"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
+<title>FestivalSite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
 <script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
-
+ 
+        
 
 <link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
@@ -42,6 +42,12 @@ header nav { background-color:#EB5A1E; color:#fff; height:28px;   }
 aside {min-height:400px;}	
 
 footer { font-size:.8em; } 
+
+button {
+  color: #fff;
+  background-color: #EB5A1E;
+  font-weight: bold;
+}
 </style>
 
 <script language="JavaScript1.1">
@@ -70,14 +76,14 @@ image3.src="Afbeeldingen/festival3.jpg"
         <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
-            	<li><a href="./index.jsp">Home</a></li>
-                <li class="active"><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li><a href="./prijzen.xhtml">Prijzen</a></li>
-                <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
-                <logonknop><li><a href="./ENfestivals.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
-                <logonknop><li><a href="./festivals.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
+            	<li><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <logonknop><li class="active"><a href="./ENlogin.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENlogin.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./login.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>
@@ -113,52 +119,26 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <%-- We halen de parameter op van de naam van het festival die we meegekregen hebben van de pagina: festivals.jsp  --%>
-            <h1><%=request.getParameter("fest_naam")%></h1>
-            <table>
-                          <%@page import="java.util.List"%>
-                          <%@page import="connectie.Connectie"%>
-                          <%@page import="connectie.Festivals"%>
-        <%
-       List < Festivals > resultaat;
-       
-       //object van de klasse "Connectie" aanmaken
-       Connectie connectie = new Connectie();
-       
-       //uitvoeren methode "OphalenInfoFestivals" van de klasse "Connectie"
-       try{
-       resultaat = connectie.OphalenInfoFestivals(request.getParameter("fest_naam"));
-       
-        for (int i=0;i<resultaat.size();i++){
-       
-       
-       %><tr><td><b><u>Band:</u></b></td><td><%out.print(resultaat.get(i).getBand_naam());%></td></tr><%
-       %><tr><td><b><u>Datum:</u></b></td><td><%out.print(resultaat.get(i).getDatum());%></td></tr><%
-       %><tr><td><b><u>Uur:</u></b></td><td><%out.print(resultaat.get(i).getUur());%></td></tr><%
-       %><tr><td><b><u>Podium:</u></b></td><td><%out.print(resultaat.get(i).getPod_omschr());%></td></tr><%
-       %><tr><td></br></br></td></tr><%
-       
-        }
-        //Sluiten van de connectie
-       connectie.close();
-            }
-       catch(Exception e){
-       StackTraceElement [] a = e.getStackTrace();
-       for(int i =0;i<a.length; i++){
-       out.print(a[i]);
-       
-       }
-       
-       }
-        
-         
-    %>
-       </table>
+            
+            <form action="ENverwerk.jsp" class="col col_6">
+                <fieldset class="s_column">
+                    
+                <legend>Login</legend>
+                <div>
+                <label for="name">Username:</label>
+                <input type="text" name="geb_naam"  class="box_shadow" required ="required">
+                </div>
+               <div>
+                    <label for="pwd">Password:</label>
+                <input type="password" name="pwd"  class="box_shadow" required ="required">
+              </div>
+                <button type="submit" value="Inloggen">Login</button>
+                
+              
+                </fieldset>
+            </form>
         </article>  
     </div><!-- end content -->
-    
-    
-    
     
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
@@ -168,7 +148,7 @@ image3.src="Afbeeldingen/festival3.jpg"
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>

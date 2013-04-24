@@ -1,16 +1,15 @@
 <%-- 
-    Document   : index
-    Created on : Mar 21, 2013, 3:52:33 PM
-    Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Document   : bands
+    Created on : Mar 28, 2013, 9:50:49 AM
+     Author     : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
                : Project Groep 19
 --%>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>FestivalSite Groep 19</title>
+<title>FestivalSite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -70,14 +69,14 @@ image3.src="Afbeeldingen/festival3.jpg"
         <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
-            	<li><a href="./index.jsp">Home</a></li>
-                <li class="active"><a href="./festivals.jsp">Festival</a></li>
-                <li><a href="./bands.jsp">Bands</a></li>
-                <li><a href="./locatie.jsp">Locatie</a></li>
-                <li><a href="./prijzen.xhtml">Prijzen</a></li>
-                <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
-                <logonknop><li><a href="./ENfestivals.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
-                <logonknop><li><a href="./festivals.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
+            	<li><a href="./ENindex.jsp">Home</a></li>
+                <li><a href="./ENfestivals.jsp">Festival</a></li>
+                <li class="active"><a href="./ENbands.jsp">Bands</a></li>
+                <li><a href="./ENlocatie.jsp">Location</a></li>
+                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENbands.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./bands.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>
@@ -113,62 +112,28 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <%-- We halen de parameter op van de naam van het festival die we meegekregen hebben van de pagina: festivals.jsp  --%>
-            <h1><%=request.getParameter("fest_naam")%></h1>
-            <table>
-                          <%@page import="java.util.List"%>
-                          <%@page import="connectie.Connectie"%>
-                          <%@page import="connectie.Festivals"%>
-        <%
-       List < Festivals > resultaat;
-       
-       //object van de klasse "Connectie" aanmaken
-       Connectie connectie = new Connectie();
-       
-       //uitvoeren methode "OphalenInfoFestivals" van de klasse "Connectie"
-       try{
-       resultaat = connectie.OphalenInfoFestivals(request.getParameter("fest_naam"));
-       
-        for (int i=0;i<resultaat.size();i++){
-       
-       
-       %><tr><td><b><u>Band:</u></b></td><td><%out.print(resultaat.get(i).getBand_naam());%></td></tr><%
-       %><tr><td><b><u>Datum:</u></b></td><td><%out.print(resultaat.get(i).getDatum());%></td></tr><%
-       %><tr><td><b><u>Uur:</u></b></td><td><%out.print(resultaat.get(i).getUur());%></td></tr><%
-       %><tr><td><b><u>Podium:</u></b></td><td><%out.print(resultaat.get(i).getPod_omschr());%></td></tr><%
-       %><tr><td></br></br></td></tr><%
-       
-        }
-        //Sluiten van de connectie
-       connectie.close();
-            }
-       catch(Exception e){
-       StackTraceElement [] a = e.getStackTrace();
-       for(int i =0;i<a.length; i++){
-       out.print(a[i]);
-       
-       }
-       
-       }
-        
-         
-    %>
-       </table>
+            <%-- We hebben van elke band een aparte afbeelding waarmee we een link leggen naar de pagina: bandinfo.jsp --%>
+            <%-- We geven als parameter de naam van de band mee zodat we op de volgende pagina alle info hierover kunnen ophalen --%>
+            <h1>Bands</h1>
+            <a href="./ENbandinfo.jsp?band_naam=Eminem"><img src="./Afbeeldingen/LogoEminem.gif" border="2" style="border:2px solid black;width:200px;height:200px" alt="Eminem"/></a>
+            <a href="./ENbandinfo.jsp?band_naam=Foo Fighters"><img src="./Afbeeldingen/LogoFoofighters.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Foo Fighters"/></a>
+            <a href="./ENbandinfo.jsp?band_naam=Dada Life"><img src="./Afbeeldingen/LogoDadaLife.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Dada life"/></a>
+            <a href="./ENbandinfo.jsp?band_naam=Metallica"><img src="./Afbeeldingen/LogoMetallica.gif" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Metallica"/></a>
+            <a href="./ENbandinfo.jsp?band_naam=Netsky"><img src="./Afbeeldingen/LogoNetsky.jpg" border="2" style="border:2px solid black;width:200px;height:200px;" alt="Netsky"/></a>
+          
+            <p></p>
         </article>  
     </div><!-- end content -->
-    
-    
-    
     
     
   <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>

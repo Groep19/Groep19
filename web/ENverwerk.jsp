@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
 <meta charset=utf-8>
-<title>52Framework -- brought to you by the enavu network - Angel Grablev</title>
+<title> Festivalsite Group 19</title>
 <meta name="keywords" content="keywords, here" />
 <meta name="description" content="your description here" />
 
@@ -62,7 +62,7 @@ footer { font-size:.8em; }
             	<li class="active"><a href="/">Home</a></li>
                 <li><a href="#">Festival</a></li>
                 <li><a href="#">Bands</a></li>
-                <li><a href="#">Locatie</a></li>
+                <li><a href="#">Location</a></li>
             </ul>
         </nav>
     </header>
@@ -82,9 +82,9 @@ footer { font-size:.8em; }
           resultaat = f.OphalenGebruikers(geb_naam, geb_paswoord);
           f.close();
           if (resultaat == 1){
-              response.sendRedirect("admin.jsp"); //redirect naar admin gedeelte. Tijdelijke verwijzing naar index pagina
+              response.sendRedirect("ENadmin.jsp"); //redirect naar admin gedeelte. Tijdelijke verwijzing naar index pagina
           }else{
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("ENlogin.jsp");
           }
           
        %>
@@ -99,7 +99,7 @@ footer { font-size:.8em; }
    Footer links
     </section>
     <section class="col_8 col align_right">
-    Groep 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
+    Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
     </section>
 </footer>
 </body>

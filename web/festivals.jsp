@@ -68,13 +68,17 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         <div class="clear"></div>
         
+        <%-- Dit is de menubalk waartussen de gebruiker kan kiezen --%>
         <nav>
         	<ul>
             	<li><a href="./index.jsp">Home</a></li>
                 <li class="active"><a href="./festivals.jsp">Festival</a></li>
                 <li><a href="./bands.jsp">Bands</a></li>
                 <li><a href="./locatie.jsp">Locatie</a></li>
+                <li><a href="./prijzen.xhtml">Prijzen</a></li>
                 <logonknop><li><a href="./login.jsp">Login</a></li></logonknop>
+                <logonknop><li><a href="./ENfestivals.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
+                <logonknop><li><a href="./festivals.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
             </ul>
             
         </nav>
@@ -126,7 +130,10 @@ image3.src="Afbeeldingen/festival3.jpg"
             <%
             List < Festivals > resultaat;
             
+            //object van de klasse "Connectie" aanmaken
             Connectie connectie = new Connectie();
+            
+      //uitvoeren methode "OphalenAlleFestivals" van de klasse "Connectie"
             
             try{
                 resultaat = connectie.OphalenAlleFestivals();
@@ -138,9 +145,11 @@ image3.src="Afbeeldingen/festival3.jpg"
                 %><td><%out.println(resultaat.get(i).getFest_datum());%></td><%
                 %><td><%out.println(resultaat.get(i).getFest_duur());%></td><%
                 %></tr><%
+                
                                }
                
-                
+                //Sluiten van de connectie
+                connectie.close();
             } catch (Exception e){
        StackTraceElement [] a = e.getStackTrace();
        for(int i =0;i<a.length; i++){
