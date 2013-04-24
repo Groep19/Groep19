@@ -73,7 +73,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./ENfestivals.jsp">Festival</a></li>
                 <li class="active"><a href="./ENbands.jsp">Bands</a></li>
                 <li><a href="./ENlocatie.jsp">Location</a></li>
-                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <li><a href="./ENprijzen.xhtml">Campings</a></li>
                 <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
                 <logonknop><li><a href="./ENbands.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./bands.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>

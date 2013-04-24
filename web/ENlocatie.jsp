@@ -72,7 +72,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./ENfestivals.jsp">Festival</a></li>
                 <li><a href="./ENbands.jsp">Bands</a></li>
                 <li class="active"><a href="./ENlocatie.jsp">Location</a></li>
-                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <li><a href="./ENprijzen.xhtml">Campings</a></li>
                 <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
                 <logonknop><li><a href="./ENlocatie.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./locatie.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
@@ -111,8 +111,8 @@ image3.src="Afbeeldingen/festival3.jpg"
     
     <div class="content col_12 col">
         <article>
-            <h1>Titel</h1>
-            <p>Hier komt de tekst over het onderwerp.</p>
+            <h1>Oeps</h1>
+            <p>Under construction</p>
         </article>  
     </div><!-- end content -->
     
@@ -121,7 +121,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh

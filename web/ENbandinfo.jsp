@@ -73,7 +73,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./ENfestivals.jsp">Festival</a></li>
                 <li class="active"><a href="./ENbands.jsp">Bands</a></li>
                 <li><a href="./ENlocatie.jsp">Location</a></li>
-                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <li><a href="./ENprijzen.xhtml">Campings</a></li>
                 <logonknop><li><a href="./ENlogin.jsp">Login</a></li></logonknop>
                 <logonknop><li><a href="./ENbandinfo.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./bandinfo.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
@@ -131,7 +131,7 @@ image3.src="Afbeeldingen/festival3.jpg"
        try{
        resultaat = connectie.OphalenBands(request.getParameter("band_naam"));
        // we tonen alle resultaten.
-       out.print("Muziekgenre: " + resultaat.get(0).getBand_soortMuziek());
+       out.print("Music Genre: " + resultaat.get(0).getBand_soortMuziek());
        out.print("</br>");
      out.print("Website: ");
        %> <a href="<%resultaat.get(0).getBand_url();%>"><%out.print(resultaat.get(0).getBand_url());%> </a>
@@ -163,7 +163,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh

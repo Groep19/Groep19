@@ -76,7 +76,7 @@ image3.src="Afbeeldingen/festival3.jpg"
                 <li><a href="./ENfestivals.jsp">Festival</a></li>
                 <li><a href="./ENbands.jsp">Bands</a></li>
                 <li><a href="./ENlocatie.jsp">Location</a></li>
-                <li><a href="./ENprijzen.xhtml">Price</a></li>
+                <li><a href="./ENprijzen.xhtml">Campings</a></li>
                 <logonknop><li><a href="./ENindex.jsp">Uitloggen</a></li></logonknop>
                 <logonknop><li><a href="./ENadmin.jsp"><img src="./Afbeeldingen/EN.jpg" border="0"  /></a></li></logonknop>
                 <logonknop><li><a href="./admin.jsp"><img src="./Afbeeldingen/NL.jpg" border="0" /></a></li></logonknop>
@@ -197,7 +197,7 @@ image3.src="Afbeeldingen/festival3.jpg"
         
         %>
             <h1>Manage bands</h1>
-            <form name="form1" action="admin.jsp">
+            <form name="form1" action="ENadmin.jsp">
                 
                     Name
                     <input type="text" name="naam" value="<%=bands.get(current).getBand_naam()%>" /><br/>
@@ -240,7 +240,7 @@ image3.src="Afbeeldingen/festival3.jpg"
 </div><!-- end wrap -->
 <footer class="row">
     <section class="col_8 col align_left">
-   Footer links
+   
     </section>
     <section class="col_8 col align_right">
     Group 19 : Maikel Vanmuysen, Tim Telen, Sven Haenen, Ruben Thonissen, Robin Verdingh
