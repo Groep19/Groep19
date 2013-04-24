@@ -94,24 +94,30 @@ image3.src="Afbeeldingen/festival3.jpg"
     </aside>
     
     <div class="content col_12 col">
+        <p>Overzicht van alle Campings</p>
         
-        <h:form styleClass="jsfcrud_list_form">
-                <h:commandLink action="#{CampingController.previous}" value="Previous #{CampingController.pageSize}" rendered="#{CampingController.hasPreviousPage}"/> 
+                  <h:form>
+<h:commandLink action="#{CampingController.previous}" value="Previous #{CampingController.pageSize}" rendered="#{CampingController.hasPreviousPage}"/> 
                 <h:commandLink action="#{CampingController.next}" value="Next #{CampingController.pageSize}" rendered="#{CampingController.hasNextPage}"/> 
-                <h:dataTable value="#{CampingController.helper}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+             <h:dataTable value="#{CampingController.Campings}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Title"/>
                         </f:facet>
-                        <h:outputText value="#{item.getCampings}"/>
+                        <h:outputText value="#{item.campAdres}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Description"/>
                         </f:facet>
-                        <h:outputText value="#{item.description}"/>
+                        <h:outputText value="#{item.campCap}"/>
                     </h:column>
-                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value=" "/>
+                        </f:facet>
+                        <h:commandLink action="#{CampingController.prepareView}" value="View"/>
+                    </h:column>
                 </h:dataTable>
                 <br/>
             </h:form>

@@ -20,12 +20,12 @@ public class campingHelper {
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
     }
 
-    public List getCampings(){
+    public List getCampings(int startId, int endId){
         List<Campings> campingList = null;
         try{
             
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery("select campings0_.camp_id as col_0_0_ from groep19_festivals.campings campings0");
+            Query q = session.createQuery("from Campings as Campings");
             campingList = (List<Campings>) q.list();
         
         } catch (Exception e) {
